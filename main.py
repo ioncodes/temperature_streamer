@@ -25,7 +25,7 @@ while True:
     res = s.accept()
     client_s = res[0]
     req = client_s.recv(4096)
-    # formula (not sure if it's correct): tmp36.read() / 3.3 / 1024 * 100
+    # TODO: formula (not sure if it's correct): tmp36.read() / 3.3 / 1024 * 100
     temperature = tmp36.read() / 3.3 / 1024 * 100
     client_s.send(RESPONSE.format(str(temperature)))
     client_s.close()
